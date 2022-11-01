@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css"  href="css/index.css">
+    <title>Rajesh Login Form</title>
+    
+     <!--Include jQuery Library-->
+     <script src=
+"https://code.jquery.com/jquery-3.5.0.js">
+    </script>
+    <!--Ajax using submit Button-->
+    <script>
+        $(() => {
+            $("#submitButton").click(function(ev) {
+                var form = $("#myform2");
+                var url = form.attr('action');
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: form.serialize(),
+                    success: function(data) {
+                          
+                        alert("Form Submited Successfully");
+                    },
+                    error: function(data) {
+                          
+                        alert("some Error");
+                    }
+                });
+            });
+        });
+        </script>
+
+     
+    </head>
+<body>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Welcome to Login Page</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+     
+
+    <div class="box">
+
+    <img src="Rajesh icon.svg" class="user">
+    <br> 
+
+        <h1>Login Here</h1>
+
+        <form name="myform2" action="login.php" method="POST">
+
+
+            <p>Username</p>
+            <input type="text" name="name" placeholder="Enter Username " required="">
+            <br><br>
+
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password" required="">
+            <br><br>
+
+
+            <input type="submit" id="submitButton" name="" value="login">
+
+            <br><br>
+            Don't have an account?  
+            <a href="register.html">Sign up Here</a>
+
+        </form>
+        
+    </div>
+
+    
+
+</body>
+</html>
